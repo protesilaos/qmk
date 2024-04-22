@@ -7,6 +7,7 @@
 #define my_SHFT OSM(MOD_LSFT | MOD_RSFT)
 #define my_ALT OSM(MOD_LALT | MOD_RALT)
 #define my_GUI OSM(MOD_LGUI | MOD_RGUI)
+#define my_CA OSM(MOD_LCTL | MOD_LALT)
 #define my_SPC LT(1,KC_SPC)
 #define my_ENT LT(1,KC_ENT)
 
