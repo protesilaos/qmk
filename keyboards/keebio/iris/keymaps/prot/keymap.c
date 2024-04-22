@@ -118,21 +118,31 @@ void oneshot_mods_changed_user(uint8_t mods) {
 void oneshot_locked_mods_changed_user(uint8_t mods) {
   if (mods & MOD_MASK_SHIFT) {
     rgblight_enable();
-    rgblight_sethsv(20,255,100);
+    rgblight_sethsv(20,255,255);
   }
   if (mods & MOD_MASK_CTRL) {
     rgblight_enable();
-    rgblight_sethsv(0,255,100);
+    rgblight_sethsv(0,255,255);
   }
   if (mods & MOD_MASK_ALT) {
     rgblight_enable();
-    rgblight_sethsv(180,255,100);
+    rgblight_sethsv(180,255,255);
   }
   if (mods & MOD_MASK_GUI) {
     rgblight_enable();
-    rgblight_sethsv(210,255,100);
+    rgblight_sethsv(210,255,255);
   }
   if (!mods) {
+    rgblight_disable();
+  }
+}
+
+void oneshot_layer_changed_user(uint8_t layer) {
+  if (layer == 2) {
+    rgblight_enable();
+    rgblight_sethsv(85,255,255);
+  }
+  if (!layer) {
     rgblight_disable();
   }
 }
