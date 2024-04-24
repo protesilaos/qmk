@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       my_GUI,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,my_GUI,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      OSL(2),  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     my_CA,          my_ALT,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,OSL(2),
+      MO(_FN), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     my_CA,          my_ALT,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,MO(_FN),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     my_SHFT, my_CTRL, my_ENT,                    my_SPC,  my_CTRL, my_SHFT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -133,16 +133,6 @@ void oneshot_locked_mods_changed_user(uint8_t mods) {
     rgblight_sethsv(210,255,255);
   }
   if (!mods) {
-    rgblight_disable();
-  }
-}
-
-void oneshot_layer_changed_user(uint8_t layer) {
-  if (layer == 2) {
-    rgblight_enable();
-    rgblight_sethsv(85,255,255);
-  }
-  if (!layer) {
     rgblight_disable();
   }
 }
