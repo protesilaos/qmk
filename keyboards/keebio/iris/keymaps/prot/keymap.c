@@ -8,13 +8,6 @@
 #define _FN 2
 #define _TODO 3
 
-enum custom_keycodes {
-    MAIN = SAFE_RANGE,
-    EXT,
-    FN,
-    TODO,
-};
-
 #define my_CTRL OSM(MOD_LCTL | MOD_RCTL)
 #define my_SHFT OSM(MOD_LSFT | MOD_RSFT)
 #define my_ALT OSM(MOD_LALT | MOD_RALT)
