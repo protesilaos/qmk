@@ -12,7 +12,7 @@
 #define my_SHFT OSM(MOD_LSFT | MOD_RSFT)
 #define my_ALT OSM(MOD_LALT | MOD_RALT)
 #define my_GUI OSM(MOD_LGUI | MOD_RGUI)
-#define my_CA OSM(MOD_LCTL | MOD_LALT)
+/* #define my_CA OSM(MOD_LCTL | MOD_LALT) */
 #define my_SPC LT(_EXT,KC_SPC)
 #define my_ENT LT(_EXT,KC_ENT)
 
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       my_GUI,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,my_GUI,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      MO(_FN), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     my_CA,          my_ALT,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,MO(_FN),
+      MO(_FN), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     my_ALT,         my_ALT,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,MO(_FN),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     my_SHFT, my_CTRL, my_ENT,                    my_SPC,  my_CTRL, my_SHFT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, KC_BSLS, KC_EQUAL,KC_TILDE, KC_MINUS,KC_DQUO,                           KC_LEFT, KC_DOWN,  KC_UP,   KC_RIGHT, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, KC_PIPE, KC_PLUS, KC_UNDS,  KC_GRAVE,KC_QUOT, KC_ESC,          KC_DEL,  KC_0,    KC_1,     KC_2,    KC_3, _______, _______,
+     _______, KC_PIPE, KC_PLUS, KC_UNDS,  KC_GRAVE,KC_QUOT, KC_ESC,          KC_DEL,  _______, _______, _______, _______, _______, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______,  KC_TAB,                  KC_BSPC, _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
