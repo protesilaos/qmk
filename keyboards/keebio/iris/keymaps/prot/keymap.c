@@ -82,50 +82,57 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-void oneshot_mods_changed_user(uint8_t mods) {
-  if (mods & MOD_MASK_SHIFT) {
-    rgblight_enable();
-    rgblight_sethsv(20,255,25);
-  }
-  if (mods & MOD_MASK_CTRL) {
-    rgblight_enable();
-    rgblight_sethsv(0,255,25);
-  }
-  if (mods & MOD_MASK_ALT) {
-    rgblight_enable();
-    rgblight_sethsv(180,255,25);
-  }
-  if (mods & MOD_MASK_GUI) {
-    rgblight_enable();
-    rgblight_sethsv(210,255,25);
-  }
-  if (!mods) {
-    rgblight_disable();
-  }
-}
+/*  NOTE 2024-08-18: A recent update to QMK has made the following
+    produce a rainbow effect instead of the colour values I had
+    specified.  The rainbow is fine, but now I can no longer
+    colour-code them.  So I am disabling this for the time being and
+    may enable a different backlight effect just for further
+    experimentation.  It is not important though. */
 
-// TODO 2024-04-21: This is promising, though I need to make it switch
-// RGB effect than just a static colour.  This way, I can have, say, a
-// rainbow effect when the mod is on but otherwise use a subtle static
-// colour.
-void oneshot_locked_mods_changed_user(uint8_t mods) {
-  if (mods & MOD_MASK_SHIFT) {
-    rgblight_enable();
-    rgblight_sethsv(20,255,255);
-  }
-  if (mods & MOD_MASK_CTRL) {
-    rgblight_enable();
-    rgblight_sethsv(0,255,255);
-  }
-  if (mods & MOD_MASK_ALT) {
-    rgblight_enable();
-    rgblight_sethsv(180,255,255);
-  }
-  if (mods & MOD_MASK_GUI) {
-    rgblight_enable();
-    rgblight_sethsv(210,255,255);
-  }
-  if (!mods) {
-    rgblight_disable();
-  }
-}
+/* void oneshot_mods_changed_user(uint8_t mods) {
+ *   if (mods & MOD_MASK_SHIFT) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(20,255,25);
+ *   }
+ *   if (mods & MOD_MASK_CTRL) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(0,255,25);
+ *   }
+ *   if (mods & MOD_MASK_ALT) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(180,255,25);
+ *   }
+ *   if (mods & MOD_MASK_GUI) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(210,255,25);
+ *   }
+ *   if (!mods) {
+ *     rgblight_disable();
+ *   }
+ * }
+ *
+ * // TODO 2024-04-21: This is promising, though I need to make it switch
+ * // RGB effect than just a static colour.  This way, I can have, say, a
+ * // rainbow effect when the mod is on but otherwise use a subtle static
+ * // colour.
+ * void oneshot_locked_mods_changed_user(uint8_t mods) {
+ *   if (mods & MOD_MASK_SHIFT) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(20,255,255);
+ *   }
+ *   if (mods & MOD_MASK_CTRL) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(0,255,255);
+ *   }
+ *   if (mods & MOD_MASK_ALT) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(180,255,255);
+ *   }
+ *   if (mods & MOD_MASK_GUI) {
+ *     rgblight_enable();
+ *     rgblight_sethsv(210,255,255);
+ *   }
+ *   if (!mods) {
+ *     rgblight_disable();
+ *   }
+ * } */
