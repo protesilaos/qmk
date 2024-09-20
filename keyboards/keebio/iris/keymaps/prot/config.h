@@ -2,4 +2,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #define ONESHOT_TAP_TOGGLE 2
-#define ONESHOT_TIMEOUT 2000 /* Time (in ms) before the one shot key is released */
+ /* Time (in ms) before the one shot key is released */
+#define ONESHOT_TIMEOUT 1000
