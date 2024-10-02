@@ -6,4 +6,9 @@
 #define ONESHOT_TIMEOUT 1000
 
 #define TAPPING_TERM 200
-#define HOLD_ON_OTHER_KEY_PRESS
+
+/*  NOTE 2024-09-20: I tried this for a while but was getting too many
+    false positives.  I keeping this here to remember not to do it
+    again.  Or, anyhow, to review how I need to do it. */
+
+/* #define HOLD_ON_OTHER_KEY_PRESS */
